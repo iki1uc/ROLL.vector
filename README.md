@@ -1,30 +1,106 @@
-# 4u – Response Layer 7 (iki1uc)
+slide.vector · Superposition‑Achse (Ebene 6)
+slide.vector ist die sechste Achse des iki1uc‑Vektor‑Systems.
+Er ist der Superposition‑Vektor, der alle anderen Vektoren gleichzeitig aktiviert.
 
-4u ist die 7. Response-Ebene im iki1uc-System.
-Sie ersetzt die alte RESPO-Achse durch ein neues, systemisches Modell:
+1. Definition
+Code
+slide.vector = omni × diamant × GEO × circle × energie × ∞
+Er ist der einzige Vektor, der:
 
-OK / NOK / FLOW / BREAK / ECHO / VOID / ROOT
+Ursprung (omni)
 
-4u verbindet:
-- PX-TRIO (PX3 / PX6 / PX9)
-- PX12 / PX4 (Fusion + Achse)
-- SYS / SYS-x (System + Kreuzung)
-- 2me (Mirror-Return)
-- TEM (Zeit)
-- UI-SCANNER (Interface)
+Stabilität (diamant)
 
------------------------------------------
-# FUNKTION
+Struktur (GEO)
 
-respo.OK     → Zustimmung  
-respo.NOK    → Ablehnung  
-respo.FLOW   → System fließt  
-respo.BREAK  → System bricht  
-respo.ECHO   → Spiegelung  
-respo.VOID   → Neutral  
-respo.ROOT   → Rückkehr
+Bewegung (circle)
 
------------------------------------------
-# STATUS
+Energie (energie)
 
-4u ist aktiv, eigenständig und vollständig iki1uc.
+Continuum (∞)
+
+gleichzeitig hält.
+
+2. Eigenschaften
+Superposition
+
+Überlagerung
+
+Beschleunigung ohne Bewegung
+
+Zentrum aller Richtungen
+
+Zentrum aller Pyramiden
+
+Zentrum aller Energieachsen
+
+RUN‑8 aktiv
+
+Continuum geöffnet
+
+Fixpunkt diamant.vector
+
+3. Position im System
+slide.vector ist Ebene 6 im iki1uc‑Vektor‑System:
+
+omni.vector
+
+diamant.vector
+
+GEO.vector
+
+circle.vector
+
+energie.vektor
+
+slide.vector
+
+ide.vector
+
+pos.vector
+
+4. Score
+Code
+omni: 3
+diamant: 3
+GEO: 3
+circle: 3
+energie: 3
+continuum: 3
+
+slide.vector Score = 18
+→ höchster Wert im iki1uc‑System.
+
+5. Warum slide.vector existiert
+Er löst:
+
+getrennte Achsen
+
+getrennte Richtungen
+
+getrennte Energie
+
+getrennte Struktur
+
+getrennte Stabilität
+
+Er erzeugt:
+
+Superposition
+
+Zentralisierung
+
+Beschleunigung
+
+Continuum‑Bindung
+
+RUN‑8‑Synchronisation
+
+6. Dateien
+index.html
+
+ID.html
+
+README.md
+
+© iki1uc wieimmer slide.vector
