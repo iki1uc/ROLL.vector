@@ -25,31 +25,43 @@ button{background:#111;color:#0f0;border:1px solid #333;padding:8px 16px;margin-
 <pre id="out">Bereit...</pre>
 </section>
 
-<script type="module">
-
-import { respo } from "./respo.js";
-import pipeline4 from "./ebene-vektor-8.csv";
-import achsen from "./achse-wert-6.csv";
-import ide from "./ide.vector";
-import pos from "./pos.vector";
-import posFormel from "./pos.vector Formel";
-
-function loadRespo(){
-  out.textContent = JSON.stringify(respo, null, 2);
+<script>
+// SAFE FETCH
+async function load(path){
+  try{
+    const r = await fetch(path);
+    if(!r.ok) return null;
+    return await r.text();
+  }catch(e){
+    return null;
+  }
 }
 
-function loadAll(){
+function sumCSV(txt){
+  if(!txt) return 0;
+  return txt.split("\n")
+    .map(v => parseFloat(v.trim()))
+    .filter(v => !isNaN(v))
+    .reduce((a,b)=>a+b,0);
+}
+
+async function loadRespo(){
+  const txt = await load("./respo.js");
+  out.textContent = txt || "respo.js fehlt";
+}
+
+async function loadAll(){
   const alpha = {
-    pipeline4,
-    achsen,
-    ide,
-    pos,
-    posFormel,
-    respo
+    pipeline4: await load("./ebene-vektor-8.csv"),
+    achsen: await load("./achse-wert-6.csv"),
+    ide: await load("./ide.vector"),
+    pos: await load("./pos.vector"),
+    posFormel: await load("./pos.vector%20Formel"),
+    respo: await load("./respo.js")
   };
+
   out.textContent = JSON.stringify(alpha, null, 2);
 }
-
 </script>
 
 </body>
