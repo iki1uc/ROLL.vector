@@ -2,29 +2,54 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>4u – Response Layer</title>
+<title>slide.vector – Alpha Index</title>
 
 <style>
 body{background:#000;color:#0f0;font-family:monospace;padding:20px;}
+section{margin-bottom:30px;}
+h1,h2{color:#0f0;}
 pre{background:#111;padding:20px;border:1px solid #333;}
-button{background:#111;color:#0f0;border:1px solid #333;padding:8px 16px;}
+button{background:#111;color:#0f0;border:1px solid #333;padding:8px 16px;margin-right:10px;}
 </style>
 </head>
 
 <body>
 
-<h1>4u – Response Layer</h1>
+<h1>slide.vector – GTML Alpha Index</h1>
 
-<button onclick="show()">RESPO</button>
+<button onclick="loadAll()">LOAD ALL</button>
+<button onclick="loadRespo()">4u</button>
 
+<section>
+<h2>Output</h2>
 <pre id="out">Bereit...</pre>
+</section>
 
 <script type="module">
-import { respo } from "./respo.js";
 
-function show(){
+import { respo } from "./respo.js";
+import pipeline4 from "./ebene-vektor-8.csv";
+import achsen from "./achse-wert-6.csv";
+import ide from "./ide.vector";
+import pos from "./pos.vector";
+import posFormel from "./pos.vector Formel";
+
+function loadRespo(){
   out.textContent = JSON.stringify(respo, null, 2);
 }
+
+function loadAll(){
+  const alpha = {
+    pipeline4,
+    achsen,
+    ide,
+    pos,
+    posFormel,
+    respo
+  };
+  out.textContent = JSON.stringify(alpha, null, 2);
+}
+
 </script>
 
 </body>
