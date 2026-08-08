@@ -1,68 +1,26 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<title>slide.vector – Alpha Index</title>
+<script type="module">
+import { ROLL_VECTOR } from "./ROLL.vector.js";
+import { POS_VECTOR } from "./pos.vector";
 
-<style>
-body{background:#000;color:#0f0;font-family:monospace;padding:20px;}
-section{margin-bottom:30px;}
-h1,h2{color:#0f0;}
-pre{background:#111;padding:20px;border:1px solid #333;}
-button{background:#111;color:#0f0;border:1px solid #333;padding:8px 16px;margin-right:10px;}
-</style>
-</head>
+let frame = 0;
 
-<body>
+async function start(){
 
-<h1>slide.vector – GTML Alpha Index</h1>
+    const pos = POS_VECTOR(frame);
 
-<button onclick="loadAll()">LOAD ALL</button>
-<button onclick="loadRespo()">4u</button>
+    const roll = ROLL_VECTOR({
+        x: pos.x,
+        y: pos.y,
+        z: pos.z,
+        frame
+    });
 
-<section>
-<h2>Output</h2>
-<pre id="out">Bereit...</pre>
-</section>
+    document.getElementById("out").textContent =
+        JSON.stringify({ pos, roll }, null, 2);
 
-<script>
-// SAFE FETCH
-async function load(path){
-  try{
-    const r = await fetch(path);
-    if(!r.ok) return null;
-    return await r.text();
-  }catch(e){
-    return null;
-  }
+    frame++;
+    requestAnimationFrame(start);
 }
 
-function sumCSV(txt){
-  if(!txt) return 0;
-  return txt.split("\n")
-    .map(v => parseFloat(v.trim()))
-    .filter(v => !isNaN(v))
-    .reduce((a,b)=>a+b,0);
-}
-
-async function loadRespo(){
-  const txt = await load("./respo.js");
-  out.textContent = txt || "respo.js fehlt";
-}
-
-async function loadAll(){
-  const alpha = {
-    pipeline4: await load("./ebene-vektor-8.csv"),
-    achsen: await load("./achse-wert-6.csv"),
-    ide: await load("./ide.vector"),
-    pos: await load("./pos.vector"),
-    posFormel: await load("./pos.vector%20Formel"),
-    respo: await load("./respo.js")
-  };
-
-  out.textContent = JSON.stringify(alpha, null, 2);
-}
+start();
 </script>
-
-</body>
-</html>
