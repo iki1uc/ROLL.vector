@@ -1,0 +1,11 @@
+// ROLL.vector — Move für Superposition
+
+export function ROLL_VECTOR(v){
+    return {
+        x: Math.cos(v.x) - Math.sin(v.y),
+        y: Math.sin(v.x) + Math.cos(v.y),
+        z: Math.sin(v.z * 0.5),
+        w: Math.cos(v.z * 0.5),
+        frame: v.frame + 1
+    };
+}
