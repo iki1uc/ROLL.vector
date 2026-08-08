@@ -1,12 +1,18 @@
 <script type="module">
 import { ROLL_VECTOR } from "./ROLL.vector.js";
 import { POS_VECTOR } from "./pos.vector";
+import { HOUDINI_VECTOR } from "./Houdini.vector.js";
 
 let frame = 0;
 
 async function start(){
 
-    const pos = POS_VECTOR(frame);
+    let pos = POS_VECTOR(frame);
+
+    // Falls POS_VECTOR nichts liefert → Houdini‑Move
+    if(!pos || !pos.x){
+        pos = HOUDINI_VECTOR(frame);
+    }
 
     const roll = ROLL_VECTOR({
         x: pos.x,
